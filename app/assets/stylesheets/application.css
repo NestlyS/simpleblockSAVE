@@ -174,7 +174,7 @@ body{
    }
 .text{
     display: inline-block;
-    flex: 2;
+    vertical-align: top;
 }
 .hidden-box:hover + .test {
     background-position: -24px 0px;
