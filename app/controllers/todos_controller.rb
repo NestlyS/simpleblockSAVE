@@ -14,6 +14,11 @@ class TodosController < ApplicationController
         @todo = Todo.find(params[:id])
         @todo.update(notTodo_params)
     end
+    def destroy
+        @todo = Todo.find(params[:id])
+        @todo.destroy
+        redirect_to welcome_index_path
+    end
     private
         def todo_params
             params.require(:todo).permit(:text, false, :project_id)

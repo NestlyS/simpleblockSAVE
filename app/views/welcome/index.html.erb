@@ -1,5 +1,6 @@
 <div id="cn">
             <%= render 'todos/test_todo_form'%>
+            <%= render 'projects/project_form'%>
 </div>
 <div id="all" class="container">
    <div  id="tasks-header">
@@ -16,12 +17,15 @@
      <% @projects.each do |project| %>
             <div class="col-lg-4 col-md-6 col-12">
                <div class="full-card">
-                    <h2 align="center"><%= project.title%></h2>
+                    <h2 align="center"><%= project.title%><button type="button" class="btn btn-danger btn-sm btn-plus"><%= link_to 'X', [project], method: :delete, data: { confirm: 'Are you sure?'}, :class => "text-light"%></button></h2>
                         <div class="tasks">
+                        <div class="container">
+                          <div class="row">
                         <% project.todos.each do |todo| %>
                            <ul>
-                               <li style="list-style: none;" >
+                               <li style="list-style: none;" class="align-top someli" >
                                    <%= form_for project.todos.find(todo.id) do |form| %>
+                                        <button type="button" class="btn btn-danger btn-sm btn-plus btn-plus-plus"><%= link_to 'X', [todo], method: :delete, :class => "text-light" %></button>
                                         <%= form.check_box("isCompleted", {:id => "#{project.id}-#{todo.id}",:class =>"hidden-box", checked: (todo.isCompleted and todo.isCompleted != nil)} , 'false', 'true' ) %>
                                         <label class="test" for="<%= project.id%>-<%= todo.id%>" onclick="checkboxChangeValue('<%= project.id%>-<%= todo.id%>' ,'<%= todo.id%>' )"></label>
                                         <label class="text" for="<%= project.id%>-<%= todo.id%>" onclick="checkboxChangeValue('<%= project.id%>-<%= todo.id%>' ,'<%= todo.id%>')"><%= todo.text%></label>
@@ -29,6 +33,8 @@
                                </li>
                            </ul>
                         <%end%>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

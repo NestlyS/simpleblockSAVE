@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
       @projects = Project.all
+      @project = Project.new
       @todo = Todo.new
   end
   def new

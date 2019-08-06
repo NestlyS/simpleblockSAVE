@@ -102,6 +102,15 @@ body{
     font-size: 5vw;
 }
 
+.btn-plus{
+
+}
+
+.btn-plus-plus{
+  margin-bottom: 34px;
+  position: relative;
+}
+
 #form {
 
 }
@@ -120,6 +129,24 @@ body{
 }
 
 #todo{
+    z-index: 52;
+    background-color: aliceblue;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: hsl(0, 0%, 39%);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 20px;
+    padding-top: 15px;
+}
+
+.edit_todo{
+  height: 24px;
+}
+
+#project{
     z-index: 52;
     background-color: aliceblue;
     border-width: 1px;
@@ -162,19 +189,24 @@ body{
 }
 
 
-
+.someli{
+  display: block;
+}
 
 .test  {
 
-    display: inline-block;
+
     width: 24px;
     height: 24px;
     background: url(http://www.imageup.ru/img152/3444558/blue.png) no-repeat;
     cursor: pointer;
+    position: relative;
    }
 .text{
-    display: inline-block;
+    height: 100%;
     vertical-align: top;
+    position: relative;
+    width: 200px;
 }
 .hidden-box:hover + .test {
     background-position: -24px 0px;

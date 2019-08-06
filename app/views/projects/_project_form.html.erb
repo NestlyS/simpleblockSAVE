@@ -1,0 +1,21 @@
+<div id="project-div" style="display:none;">
+  <%= form_for :project, url: create_project_path, :html => { :id => "project"} do |form| %>
+  <p>
+   <div id="label">
+    <%= form.label ("title"), "Новый проект", class:'label' %><br>
+   </div>
+    <%= form.text_field ("title"), placeholder: "Название проекта", class: 'form-control' %>
+  </p>
+   <div id="buttons">
+    <button type="button" class="btn btn-secondary gray" id="cancelButton" onclick="document.getElementById('cn').style.display = 'none'">ОТМЕНА</button>
+    <button type="button" class="btn btn-primary blue" onclick="document.getElementById('project').submit()" >OK</button>
+   </div>
+   <div class="container">
+     <div class="row">
+         <div class="col"><button type="button" class="btn btn-success" onclick="
+           document.getElementById('project-div').style.display = 'none';
+           document.getElementById('todo').style.display = 'block';" >Новая задача</button></div>
+     </div>
+   </div>
+   <% end %>
+</div>
