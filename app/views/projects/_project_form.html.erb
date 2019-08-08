@@ -6,16 +6,10 @@
    </div>
     <%= form.text_field ("title"), placeholder: "Название проекта", class: 'form-control' %>
   </p>
-   <div id="buttons">
-    <button type="button" class="btn btn-secondary gray" id="cancelButton" onclick="document.getElementById('cn').style.display = 'none'">ОТМЕНА</button>
-    <button type="button" class="btn btn-primary blue" onclick="document.getElementById('project').submit()" >OK</button>
-   </div>
-   <div class="container">
-     <div class="row">
-         <div class="col"><button type="button" class="btn btn-success" onclick="
-           document.getElementById('project-div').style.display = 'none';
-           document.getElementById('todo').style.display = 'block';" >Новая задача</button></div>
-     </div>
-   </div>
+      <div id="buttons">
+        <button type="button" class="btn btn-secondary gray col-6" id="cancelButton" onclick="hideBlock('cd')">ОТМЕНА</button>
+        <button type="button" class="btn btn-primary blue col-6" onclick="submitForm('project')" >OK</button>
+      </div>
+      <button type="button" class="btn btn-success green" onclick="changeToTodo()" >Новая задача</button>
    <% end %>
 </div>

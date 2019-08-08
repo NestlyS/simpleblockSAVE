@@ -35,8 +35,29 @@ function icheck(){
 
 
 function checkboxChangeValue(object, sub){
-  
-  document.getElementById('edit_todo_'+sub).submit()
+  document.getElementById('edit_todo_'+sub).submit();
+}
+
+function submitForm(object){
+  document.getElementById(object).submit();
+}
+
+function hideBlock(object){
+   document.getElementById(object).style.display = 'none';
+}
+
+function showBlock(object){
+  document.getElementById(object).style.display = 'block';
+}
+
+function changeToProj() {
+        document.getElementById('todo').style.display = 'none';
+        document.getElementById('project-div').style.display = 'block';
+}
+
+function changeToTodo(){
+     document.getElementById('project-div').style.display = 'none';
+     document.getElementById('todo').style.display = 'block';
 }
 
 $(function(){
